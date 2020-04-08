@@ -55,8 +55,8 @@ for (let todo of todos) {
 
 // filter new array from array, based on condition
 
-todos.forEach(function (todo) {
-  console.log(todo.text);
+todos.forEach(function (todo, index) {
+  console.log(`${index + 1}. ${todo.text}`);
 });
 
 // return array
