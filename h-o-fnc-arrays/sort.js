@@ -30,3 +30,4 @@ console.log(sortedCompanies2);
 // sort ages                      or b - a for reversed
 const sortAges = ages.sort((a, b) => a - b);
 console.log(sortAges);
+
