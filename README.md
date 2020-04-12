@@ -1,3 +1,3 @@
-# JS Crash Course
+# Basic Web Dev Crash Course
 
-taken notes from [Video](https://www.youtube.com/watch?v=hdI2bqOjy3c)
+taken notes from [Playlist](https://www.youtube.com/playlist?list=PLNCEiw6QlNUk5Qg05roGBhu_HHMMkhXTv)
