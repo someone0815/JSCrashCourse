@@ -1,0 +1,51 @@
+# GET http://localhost:3000/api/books
+
+# GET http://localhost:3000/api/books/5e93c4c54c9443215c6554b6
+
+# POST http://localhost:3000/api/genres HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "Romance"
+# }
+
+# POST http://localhost:3000/api/books HTTP/1.1
+# content-type: application/json
+
+# {
+#     "title":"The Notebook",
+#     "genre":"Romance",
+#     "description":"In this video we will create a full RESTful web api that will allow us to get, post, put and",
+#     "author":"Nicholar Sparks",
+#     "publisher":"Foobar",
+#     "pages":"400",
+#     "image_url":"https://image.com/img.jpg",
+#     "buy_url":"https://amazon.com"
+# }
+
+
+# PUT http://localhost:3000/api/genres/5e93b7576703928bf0edc175 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "Thriller"
+# }
+
+# PUT http://localhost:3000/api/books/5e93c4c54c9443215c6554b6 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "title":"Monmon2",
+#      "genre":"Thriller",
+#      "description":"No description available yet",
+#      "author":"Someone Done",
+#      "publisher":"Fantasic Inc",
+#      "pages":"380",
+#      "image_url":"https://imgur.com/img2.jpg",
+#      "buy_url":"https://bookstore.com"
+# }
+
+# DELETE http://localhost:3000/api/genres/5e93b7966703928bf0edc176
+
+# DELETE http://localhost:3000/api/books/5e93c4c54c9443215c6554b6
+
