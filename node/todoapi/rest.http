@@ -1,0 +1,56 @@
+# GET http://localhost:3000/api/todos
+
+# --
+
+# GET http://localhost:3000/api/todos/5e952e8c8083512fece61255
+
+GET http://localhost:3000/api/todos/?limit=3
+
+# --
+
+# POST http://localhost:3000/api/todos HTTP/1.1
+# content-type: application/json
+
+# {
+#     "userId":1,
+#     "title":"Todo Title",
+#     "completed":false
+# }
+
+# --
+
+# PUT http://localhost:3000/api/todos/5e950f779e5de007b81b42ac HTTP/1.1
+# content-type: application/json
+
+# {
+#     "userId":3,
+#      "title":"Todo Put",
+#     "completed":false
+# }
+
+# PUT http://localhost:3000/api/todos/5e9511c7ba628c2908648d26 HTTP/1.1
+# content-type: application/json
+
+# {
+#   "userId": "sdsdsd",
+#     "completed":"true"
+# }
+
+
+
+
+
+
+# PUT http://localhost:3000/api/todos/5e9520fbcaf5e22af8fa5615 HTTP/1.1
+# content-type: application/json
+
+# {
+#   "title": "New sdsdsdds",
+#   "completed": true
+# }
+
+
+# --
+
+# DELETE http://localhost:3000/api/todos/5e9510e9b398028e78170586
+
