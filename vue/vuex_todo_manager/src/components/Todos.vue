@@ -2,7 +2,9 @@
   <div>
     <h3>Todos</h3>
 
-    <div class="todos">
+    <transition-group class="todos"
+                      name="slide-fade"
+                      mode="in">
       <div @dblclick="onDblClick(todo)"
            v-for="todo in allTodos"
            :key="todo._id"
@@ -12,7 +14,11 @@
         <i @click="deleteTodo(todo._id)"
            class="fas fa-trash-alt"></i>
       </div>
-    </div>
+      <!-- <div :key="value">
+          {{ value }}
+        </div> -->
+    </transition-group>
+
   </div>
 </template>
 
@@ -43,7 +49,6 @@ export default {
 <style scoped>
 .todos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
 .todo {
@@ -54,6 +59,7 @@ export default {
   position: relative;
   cursor: pointer;
   color: #b4ffd2;
+  transition: all 0.4s;
 }
 i {
   position: absolute;
@@ -66,10 +72,11 @@ i {
   background: #2c5442;
   color: #63a085;
 }
-
-@media (max-width: 700px) {
-  .todos {
-    grid-template-columns: 1fr;
-  }
+.slide-fade-enter-active {
+  transition: all 0.4s;
+}
+.slide-fade-enter {
+  transform: translateY(-50px);
+  opacity: 0;
 }
 </style>

@@ -10,21 +10,21 @@ const getters = {
 
 const actions = {
   async fetchTodos({ commit }) {
-    const response = await axios.get('http://localhost:3000/api/todos');
+    const response = await axios.get('http://192.168.2.104:3000/api/todos');
 
     commit('setTodos', response.data);
     console.log('fetchTodos:');
     console.log(response.data);
   },
   async addTodo({ commit }, title) {
-    const response = await axios.post('http://localhost:3000/api/todos', {
+    const response = await axios.post('http://192.168.2.104:3000/api/todos', {
       title
     });
 
     commit('newTodo', response.data);
   },
   async deleteTodo({ commit }, id) {
-    await axios.delete(`http://localhost:3000/api/todos/${id}`);
+    await axios.delete(`http://192.168.2.104:3000/api/todos/${id}`);
 
     commit('removeTodo', id);
   },
@@ -35,14 +35,14 @@ const actions = {
     );
 
     const response = await axios.get(
-      `http://localhost:3000/api/todos/?limit=${limit}`
+      `http://192.168.2.104:3000/api/todos/?limit=${limit}`
     );
 
     commit('setTodos', response.data);
   },
   async updateTodo({ commit }, updTodo) {
     const response = await axios.put(
-      `http://localhost:3000/api/todos/${updTodo._id}`,
+      `http://192.168.2.104:3000/api/todos/${updTodo._id}`,
       updTodo
     );
 

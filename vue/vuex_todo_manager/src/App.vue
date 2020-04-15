@@ -33,9 +33,10 @@ body {
   background: #282c34;
 }
 .container {
-  max-width: 1100px;
+  max-width: 450px;
   margin: auto;
   overflow: auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  overflow: hidden;
 }
 </style>
