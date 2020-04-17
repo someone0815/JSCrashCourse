@@ -4,42 +4,44 @@
 
 #### Addable Features
 
-- [ ] Nested Todos
-  - [ ] Stepper
-- [ ] % Progressbar reamining
-- [ ] Reload Todos Button
-- [ ] Confirm deletion modal
-- [ ] Date created label
-  - [ ] Date to text label (x days ago)
+- [ ] Frontend
+  - [ ] Slide Item
+  - [ ] Confirm deletion modal
+  - [ ] Reload Todos Button
+  - [ ] Tags
+  - [ ] Priority upvote system
+  - [ ] Date created label
+  - [ ] Date to sentence
   - [ ] Progressbar till expiration
     - [ ] visual in days steps
     - [ ] visual in hours steps if < than a day
-- [ ] Tags
-- [ ] Priority upvote system
-- [ ] Slide Item
-- [ ] Advanced Submit
-  - [ ] Rich texteditor
-  - [ ] Spellcheck
-  - [ ] Remind/Wakeup
-- [ ] Dashboard
-  - [ ] Pinning
-  - [ ] Pagination
-  - [ ] Timeline log
-  - [ ] Skeleton
-  - [ ] Error Messages
-  - [ ] Visual loader/spinner
-  - [ ] Edit
-  - [ ] Search by
-    - [ ] String
-    - [ ] Tag
-    - [ ] User
-    - [ ] Expirationtime Range
-    - [ ] Priority
-  - [ ] Sort by
-    - [ ] Alphabetical
-    - [ ] Newest/Oldest
-    - [ ] Expiration
-    - [ ] Priority
+  - [ ] Advanced Submit
+    - [ ] Rich texteditor
+    - [ ] Spellcheck
+    - [ ] Remind/Wakeup
+- [ ] Frontend/Backend
+  - [ ] Nested Todos
+    - [ ] Stepper
+    - [ ] % Progressbar reamining
+  - [ ] Dashboard
+    - [ ] Pinning
+    - [ ] Pagination
+    - [ ] Timeline log
+    - [ ] Skeleton
+    - [ ] Error Messages
+    - [ ] Visual loader/spinner
+    - [ ] Edit
+    - [ ] Search by
+      - [ ] String
+      - [ ] Tag
+      - [ ] User
+      - [ ] Expirationtime Range
+      - [ ] Priority
+    - [ ] Sort by
+      - [ ] Alphabetical
+      - [ ] Newest/Oldest
+      - [ ] Expiration
+      - [ ] Priority
 - [ ] Backend
   - [ ] Realtime updated info
   - [ ] Change logging

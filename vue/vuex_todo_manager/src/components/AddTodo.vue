@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h3>Add Todo</h3>
+  <div class="back-body">
     <div class="add">
       <form @submit="onSubmit">
         <input type="text" v-model="title" placeholder="Add Todo..." />
@@ -12,21 +11,31 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { loremIpsum } from 'lorem-ipsum';
 
 export default {
   name: 'AddTodo',
   data() {
     return {
-      title: ''
+      title: '',
     };
   },
   methods: {
     ...mapActions(['addTodo']),
     onSubmit(e) {
       e.preventDefault();
-      this.addTodo(this.title);
-    }
-  }
+      this.addTodo(
+        this.title != ''
+          ? this.title
+          : loremIpsum({
+              count: 1,
+              sentenceLowerBound: 3, // Min. number of words per sentence.
+              sentenceUpperBound: 5,
+            })
+      );
+      this.title = '';
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="back-body closemargin">
     <select @change="filterTodos($event)">
       <option value="200"
               selected>200</option>
@@ -24,7 +24,6 @@ div {
   color: lightcyan;
 }
 select {
-  margin-top: 20px;
   padding: 6px;
   border: #41b883 1px solid;
 }
