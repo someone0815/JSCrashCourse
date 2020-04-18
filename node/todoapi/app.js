@@ -9,6 +9,9 @@ app.use(cors());
 
 Todo = require('./models/todo');
 
+var fs = require('fs');
+var key = fs.readFileSync('key.txt', 'utf8');
+
 // Connect to Mongoose
 mongoose.connect('mongodb://localhost:27017/todo');
 var db = mongoose.connection;
@@ -58,7 +61,11 @@ app.get('/api/todos/:_id', (req, res) => {
   });
 });
 
-app.post('/api/todos', (req, res) => {
+app.post('/api/todos/:key', (req, res) => {
+  if (req.params.key != key) {
+    console.log(`catched wrong key in post`);
+    return res.status(400).send();
+  }
   var todo = req.body;
   Todo.addTodo(todo, (err, todo) => {
     if (err) {
@@ -68,7 +75,11 @@ app.post('/api/todos', (req, res) => {
   });
 });
 
-app.put('/api/todos/:_id', (req, res) => {
+app.put('/api/todos/:_id&:key', (req, res) => {
+  if (req.params.key != key) {
+    console.log(`catched wrong key in put`);
+    return res.status(400).send();
+  }
   var id = req.params._id;
   var todo = req.body;
   Todo.updateTodo(id, todo, {}, (err, todo) => {
@@ -79,7 +90,11 @@ app.put('/api/todos/:_id', (req, res) => {
   res.json(todo);
 });
 
-app.delete('/api/todos/:_id', (req, res) => {
+app.delete('/api/todos/:_id&:key', (req, res) => {
+  if (req.params.key != key) {
+    console.log(`catched wrong key in delete`);
+    return res.status(400).send();
+  }
   var id = req.params._id;
   Todo.removeTodo(id, (err, todo) => {
     if (err) {

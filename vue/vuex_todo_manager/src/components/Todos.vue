@@ -1,14 +1,25 @@
 <template>
   <div class="back-body">
-
-    <transition-group class="todos"
-                      name="slide-fade"
-                      mode="in">
-      <div @click="selectTodo(todo, index) "
+    <transition-group name="staggered-fade"
+                      appear
+                      tag="ul"
+                      v-bind:css="false"
+                      v-on:before-enter="beforeEnter"
+                      v-on:enter="enter"
+                      v-on:leave="leave"
+                      transition="staggered"
+                      stagger="100"
+                      class="todos">
+      <div @click="selectTodo(todo, index)"
+           @dblclick="onDblClick(todo)"
            v-for="(todo, index) in allTodos"
            :key="todo._id"
            class="todo"
-           :class=" [(todo.completed ? 'is-complete' : '' ), (show == index ? 'is-hover' : ''), (selectedTodo._id == todo._id  ? 'selected' : '') ]"
+           :class="[
+          todo.completed ? 'is-complete' : '',
+          show == index ? 'is-hover' : '',
+          selectedTodo._id == todo._id ? 'selected' : '',
+        ]"
            @mouseenter="show = index"
            @mouseleave="show = null">
         {{ todo.title }}
@@ -21,11 +32,11 @@
           {{ value }}
         </div> -->
     </transition-group>
-
   </div>
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import Velocity from 'velocity-animate';
 export default {
   name: 'Todos',
   data: () => ({
@@ -39,6 +50,16 @@ export default {
       'updateTodo',
       'setSelectedTodo'
     ]),
+    onDblClick(todo) {
+      const updTodo = {
+        _id: todo._id,
+        title: todo.title,
+        completed: !todo.completed
+      };
+      console.log('onDblClick -> updTodo', updTodo);
+
+      this.updateTodo(updTodo);
+    },
 
     selectTodo(todo, index) {
       const selectedTodo = {
@@ -48,6 +69,21 @@ export default {
       };
       this.selected = index;
       this.setSelectedTodo(selectedTodo);
+    },
+    beforeEnter: function(el) {
+      el.style.opacity = 0;
+    },
+    enter: function(el, done) {
+      var delay = el.dataset.index * 150;
+      setTimeout(function() {
+        Velocity(el, { opacity: 1 }, { complete: done });
+      }, delay);
+    },
+    leave: function(el, done) {
+      var delay = el.dataset.index * 150;
+      setTimeout(function() {
+        Velocity(el, { opacity: 0 }, { complete: done });
+      }, delay);
     }
   },
   computed: mapGetters(['allTodos', 'selectedTodo']),
@@ -61,6 +97,8 @@ export default {
 .todos {
   display: grid;
   grid-gap: 1rem;
+  padding: 0px;
+  margin: 0px;
 }
 .todo {
   background: #41b883;
@@ -70,7 +108,7 @@ export default {
   position: relative;
   cursor: pointer;
   color: #b4ffd2;
-  transition: all 0.4s, box-shadow 0.2s;
+  /* transition: all 0.4s, box-shadow 0.2s; */
 }
 i {
   position: absolute;
@@ -88,13 +126,6 @@ i {
 }
 .is-hover {
   box-shadow: inset 0px 0px 0px 4px #69d7a382;
-}
-.slide-fade-enter-active {
-  transition: all 0.4s;
-}
-.slide-fade-enter {
-  transform: translateY(-50px);
-  opacity: 0;
 }
 .selected {
   box-shadow: inset 0px 0px 0px 5px #00ff8d;

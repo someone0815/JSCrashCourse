@@ -21,8 +21,8 @@ export default {
     Todos,
     AddTodo,
     FilterTodos,
-    SelectedTodo
-  }
+    SelectedTodo,
+  },
 };
 </script>
 
