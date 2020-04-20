@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grids</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aut ea iure
+        perferendis, ipsam, delectus itaque hic nesciunt laborum ullam, dolore
+        repellat omnis porro sequi. Placeat quod earum aut distinctio similique,
+        ad maiores nisi minima exercitationem harum quaerat natus pariatur
+        labore? Voluptates adipisci dolore vero voluptatum harum. Eius, quam.
+        Ipsam beatae nulla accusamus, odio consequatur, praesentium perferendis
+        ut cupiditate pariatur nemo omnis, molestiae excepturi. Similique sunt
+        fuga, accusamus officia ducimus dicta porro deserunt esse hic, dolorum,
+        voluptatum aperiam laborum enim!
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fuga
+        voluptate aspernatur, quidem ratione natus laudantium ut magnam possimus
+        omnis maxime odit amet, et nulla porro! Optio dicta voluptates
+        accusantium!
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut aut ea iure
+        perferendis, ipsam, delectus itaque hic nesciunt laborum ullam, dolore
+        repellat omnis porro sequi. Placeat quod earum aut distinctio similique,
+        ad maiores nisi minima exercitationem harum quaerat natus pariatur
+        labore? Voluptates adipisci dolore vero voluptatum harum. Eius, quam.
+        Ipsam beatae nulla accusamus, odio consequatur, praesentium perferendis
+        ut cupiditate pariatur nemo omnis, molestiae excepturi. Similique sunt
+        fuga, accusamus officia ducimus dicta porro deserunt esse hic, dolorum,
+        voluptatum aperiam laborum enim!
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fuga
+        voluptate aspernatur, quidem ratione natus laudantium ut magnam possimus
+        omnis maxime odit amet, et nulla porro! Optio dicta voluptates
+        accusantium!
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* column-gap: 1em;
+    row-gap: 1em; */
+    gap: 1em;
+  }
+
+  .wrapper > div {
+    background: #eee;
+    padding: 1em;
+  }
+
+  .wrapper > div:nth-child(odd) {
+    background: #ddd;
+  }
+</style>
