@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="container">
-      <AddTodo />
-      <FilterTodos />
-      <SelectedTodo />
-      <Todos />
+      <AddTodo class="noback" />
+      <FilterTodos class="noback" />
+      <SelectedTodo class="sel" />
+      <Todos class="noback" />
     </div>
   </div>
 </template>
@@ -21,33 +21,40 @@ export default {
     Todos,
     AddTodo,
     FilterTodos,
-    SelectedTodo,
-  },
+    SelectedTodo
+  }
 };
 </script>
 
 <style>
 h3 {
-  color: lightcyan;
-  margin: 0px 0px 15px 3px;
+  /* color: lightcyan; */
+  margin: 0px 0px 2rem 0px;
   font-weight: 400;
 }
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
-  background: #282c34;
+  background: #edf1f5;
+  letter-spacing: 0.02rem;
 }
 .container {
   max-width: 450px;
   margin: auto;
   overflow: auto;
-  /* padding: 0 1rem; */
+  /* padding: 0 1px; */
   overflow: hidden;
 }
 .back-body {
-  background-color: hsla(220, 13%, 16%, 1);
-  border-radius: 4px;
-  padding: 15px;
-  margin: 10px 5px 10px 5px;
+  background-color: white;
+
+  /* border-radius: 3px; */
+  padding: 1rem;
+}
+.sel {
+  margin: 0rem 1rem 0rem 1rem;
+}
+.noback {
+  background-color: unset;
 }
 </style>

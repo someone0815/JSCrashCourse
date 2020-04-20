@@ -2,8 +2,15 @@
   <div class="back-body">
     <div class="add">
       <form @submit="onSubmit">
-        <input type="text" v-model="title" placeholder="Add Todo..." />
-        <input type="submit" value="Submit" />
+        <input type="text"
+               v-model="title"
+               placeholder="Add Todo..." />
+
+        <button class="subbutton"
+                type="submit"
+                name="action">
+          <i class=" sub fas-times fas fa-plus"></i>
+        </button>
       </form>
     </div>
   </div>
@@ -17,7 +24,7 @@ export default {
   name: 'AddTodo',
   data() {
     return {
-      title: '',
+      title: ''
     };
   },
   methods: {
@@ -30,12 +37,12 @@ export default {
           : loremIpsum({
               count: 1,
               sentenceLowerBound: 3, // Min. number of words per sentence.
-              sentenceUpperBound: 5,
+              sentenceUpperBound: 16
             })
       );
       this.title = '';
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -48,25 +55,35 @@ input:focus {
   outline: none;
 }
 input[type='text'] {
-  border-radius: 2px 0px 0px 2px;
   flex: 10;
-  padding: 10px;
   border: transparent;
   outline: 0;
-  background-color: #404650;
-  color: #b4ffd2;
+  background-color: white;
+  color: hsl(42.2, 11.7%, 54.7%);
+  padding: 1rem;
+  border-radius: 0.7rem 0em 0rem 0.7rem;
 }
 input[type='submit'] {
-  border-radius: 0px 2px 2px 0px;
   border: 0px;
   flex: 2;
-  background: #41b883;
-
-  border: 1px #41b883 solid;
+  background: white;
+  color: hsl(42.2, 11.7%, 54.7%);
   cursor: pointer;
-  color: #b4ffd2;
+  padding: 1rem;
+  border-radius: 0rem 0.7rem 0.7rem 0rem;
 }
-input[type='submit']:hover {
-  background: #65d8a5;
+.subbutton {
+  background: #fff;
+  padding: 1rem;
+  margin: auto;
+  border-radius: 0rem 0.7rem 0.7rem 0rem;
+}
+.add {
+  border-radius: 0.7rem;
+  box-shadow: 1px 3px 4px 0px hsla(0, 0%, 0%, 0.16);
+}
+.sub {
+  position: inherit;
+  display: inline-block;
 }
 </style>
